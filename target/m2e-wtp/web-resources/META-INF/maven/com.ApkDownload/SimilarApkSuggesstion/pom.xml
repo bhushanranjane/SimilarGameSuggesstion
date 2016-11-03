@@ -49,6 +49,13 @@
 			<artifactId>spring-jms</artifactId>
 			<version>4.3.1.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.0.Final</version>
+		</dependency>
+
+
 	</dependencies>
 	<build>
 		<finalName>SimilarApkSuggesstion</finalName>

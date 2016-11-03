@@ -1,13 +1,40 @@
 package com.game.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class SuggestInfo {
+	
+	@Id
+	@GeneratedValue
+	private int sequenceId;
+	
+	@Column
 	private String gameName;
+	
+	@Column
 	private String packageName;
+	
+	@Column
 	private String imageUrl;
+	
+	@Column
 	private String gameUrl;
+	
+	@Column
 	private String gameRating;
-	private float gameCost;
+	
+	@Column
+	private String gameCost;
+	
+	@Column
 	private int affinityLevel;
+	
 	public String getGameName() {
 		return gameName;
 	}
@@ -38,10 +65,10 @@ public class SuggestInfo {
 	public void setGameRating(String gameRating) {
 		this.gameRating = gameRating;
 	}
-	public float getGameCost() {
+	public String getGameCost() {
 		return gameCost;
 	}
-	public void setGameCost(float gameCost) {
+	public void setGameCost(String gameCost) {
 		this.gameCost = gameCost;
 	}
 	public int getAffinityLevel() {

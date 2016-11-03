@@ -1,12 +1,37 @@
 package com.game.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class GameInfo {
+	
+	
+	
+	
+	@Column
 	private String gameName;
+	
+	@Id
+	@GeneratedValue
 	private String packageId;
+	
+	@Column
 	private String packageName;
+	
+	@Column
 	private String gameCategory;
+	
+	@Column
 	private String gameURL;
+	
+	@Column
 	private String paid;
+	
 
 	public String getPackageId() {
 		return packageId;
