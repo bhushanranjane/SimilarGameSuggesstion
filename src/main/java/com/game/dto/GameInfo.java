@@ -9,15 +9,11 @@ import javax.persistence.Table;
 @Entity
 @Table
 public class GameInfo {
-	
-	
-	
-	
+
 	@Column
 	private String gameName;
 	
 	@Id
-	@GeneratedValue
 	private String packageId;
 	
 	@Column
