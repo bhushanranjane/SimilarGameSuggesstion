@@ -14,7 +14,7 @@ public class PlayStoreDataFetching {
 	PlayStoreUrlFetching playStoreUrl = new PlayStoreUrlFetching();
 	GameInfo gameInfo = new GameInfo();
 
-	public ArrayList<String> getPlaystoreData(String url) {
+	public GameInfo getPlaystoreData(String url) {
 		
 		ArrayList<String> playStoreDetails = new ArrayList<String>();
 		try {
@@ -65,12 +65,12 @@ public class PlayStoreDataFetching {
 			if(packageId == null && title.equals("") && packName.equals("") && catInfo.equals("") && gameUrl.equals(""))
 				return null;
 			else{
-				playStoreDetails.add(gameInfo.getPackageId());
+				/*playStoreDetails.add(gameInfo.getPackageId());
 				playStoreDetails.add(gameInfo.getGameName());
 				playStoreDetails.add(gameInfo.getPackageName());
 				playStoreDetails.add(gameInfo.getGameCategory());
 				playStoreDetails.add(gameInfo.getGameURL());
-				playStoreDetails.add(gameInfo.getPaid());
+				playStoreDetails.add(gameInfo.getPaid());*/
 				
 				
 				System.out.println("package id:-"+gameInfo.getPackageId());
@@ -87,6 +87,6 @@ public class PlayStoreDataFetching {
 
 			e.printStackTrace();
 		}
-		return playStoreDetails;
+		return gameInfo;
 	}
 }

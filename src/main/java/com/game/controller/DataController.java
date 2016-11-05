@@ -1,7 +1,6 @@
 package com.game.controller;
 
-
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,32 +15,37 @@ import com.game.model.PlayStoreDataFetching;
 import com.game.model.PlayStoreUrlFetching;
 
 @Controller
-public class DataController
-{
-	PlayStoreUrlFetching gameUrl=new PlayStoreUrlFetching();
-	PlayStoreDataFetching gameData=new PlayStoreDataFetching();
-	GameInfo gameInfo=new GameInfo();
-	SuggestInfo suggestion=new SuggestInfo();
-	ArrayList<String> gamelist=new ArrayList<String>();
-	
+public class DataController {
+	PlayStoreUrlFetching gameUrl = new PlayStoreUrlFetching();
+	PlayStoreDataFetching gameData = new PlayStoreDataFetching();
+	GameInfo gameInfo = new GameInfo();
+	SuggestInfo suggestion = new SuggestInfo();
+	/* ArrayList<String> gamelist=new ArrayList<String>(); */
+
 	@Autowired
 	GameSuggestionDaoImpl gameDao;
-	
-	@RequestMapping(value="homepage",method=RequestMethod.POST)
-	public ModelAndView gameDetails(String gameName){
-		System.out.println("Search Here");
-		//gameDao.getGameByName(gameName);
-		String url=gameUrl.findUrl(gameName);
-		gamelist=gameData.getPlaystoreData(url);
-		System.out.println("gamlist:-"+gamelist.toString());
-		return new ModelAndView("gameDetails","gameInfo",gamelist); 
-	}
-		
-		
-		
-		
-	
-	
-	
 
+	@RequestMapping(value = "homepage", method = RequestMethod.POST)
+	public ModelAndView gameDetails(String gameName) {
+		System.out.println("Search Here" + gameName);
+
+		if (gameDao.isExist(gameName)) {
+			System.out.println("Game exist");
+
+			GameInfo game = gameDao.gameDetails(gameName);
+			return new ModelAndView("gameDetails", "game", game);
+
+		} else {
+			String url = gameUrl.findUrl(gameName);
+			gameInfo = gameData.getPlaystoreData(url);
+			gameDao.saveGame(gameInfo);
+			List<GameInfo> game = gameDao.getGameByName(gameName);
+			for (int i = 0; i < game.size(); i++) {
+				System.out.println("game list:-" + game.get(i).getGameName());
+			}
+			return new ModelAndView("gameDetails", "game", game);
+			// gameDao.isExist(gameName);
+
+		}
+	}
 }
