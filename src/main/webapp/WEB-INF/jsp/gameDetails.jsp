@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Game Details</title>
 </head>
 <body>
-<h1>Database</h1>
+<h1>Game Details</h1>
 <table>
 	<tr>
 			<td>Package Id</td>
@@ -29,5 +29,7 @@
 		</tr>
 		</c:forEach>
 	</table>
+	<br>
+	<jsp:include page="similarGames.jsp"></jsp:include>
 </body>
 </html>
