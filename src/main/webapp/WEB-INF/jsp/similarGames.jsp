@@ -9,7 +9,6 @@
 <title>Similar Games</title>
 </head>
 <body>
-		<form:form action="sugesstionPage" commandName="validate" method="post">
 	<table>
 	<tr>
 			<td>Sequence Id</td>
@@ -30,6 +29,5 @@
 		</tr>
 		</c:forEach>
 	</table>
-</form:form>
 </body>
 </html>

@@ -18,7 +18,7 @@
 			<td>Game Url</td>
 			<td>Game Cost</td>
 		</tr>
-	<c:forEach items="${game}" var="game">
+	<c:forEach items="${model.game}" var="game">
 		<tr>
 			<td>${game.packageId}</td>	
 			<td>${game.gameName}</td>	
@@ -30,6 +30,28 @@
 		</c:forEach>
 	</table>
 	<br>
-	<jsp:include page="similarGames.jsp"></jsp:include>
+	<table>
+	<tr>
+			<td>Sequence Id</td>
+			<td>Game Name</td>
+			<td>Package Name</td>
+			<td>Image Url</td>
+			<td>Game Rating</td>
+			<td>Game Cost</td>
+		</tr>
+		<c:forEach items="${model.suggestion}" var="suggestion">
+		<tr>
+			<td>${suggestion.sequenceId}</td>	
+			<td>${suggestion.gameName}</td>	
+			<td>${suggestion.packageName}</td>
+			<td>${suggestion.imageUrl}</td>
+			<td>${suggestion.gameRating}</td>
+			<td>${suggestion.gameCost}</td>
+		</tr>
+		</c:forEach>
+	</table>
+	<br>
+	
+	
 </body>
 </html>

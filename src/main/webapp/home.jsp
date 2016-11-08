@@ -15,3 +15,4 @@
 		<!-- Image:<input type="file" name="image" size="50" /> <br /> 
 		<br> -->
 		</form:form>
+</body>

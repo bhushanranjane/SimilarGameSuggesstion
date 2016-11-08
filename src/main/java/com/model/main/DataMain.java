@@ -13,7 +13,7 @@ public class DataMain {
 		PlayStoreGameSuggesstion pSuggest=new PlayStoreGameSuggesstion();
 		
 			//System.out.println("Enter the game name");
-		String gname="Temple Run";
+		String gname="subway surfers";
 			String url=pUrl.findUrl(gname);
 			//System.out.println("url is:-"+url);
 		pdata.getPlaystoreData(url);

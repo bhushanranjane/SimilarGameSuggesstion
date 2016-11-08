@@ -77,7 +77,7 @@ public class GameSuggestionDaoImpl implements GameSuggestionDao {
 
 	public List<SuggestInfo> gameSuggest(String gameName) {
 		session = sessionFactory.openSession();
-		Query query = session.createQuery("from GameInfo where gameName=?");
+		Query query = session.createQuery("from SuggestInfo ");
 		query.setString(0, gameName);
 		List<SuggestInfo> suggestList = query.list();
 

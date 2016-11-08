@@ -32,8 +32,7 @@ public class SuggestInfo {
 	@Column
 	private String gameCost;
 	
-	@Column
-	private int affinityLevel;
+	
 	
 	public String getGameName() {
 		return gameName;
@@ -71,11 +70,6 @@ public class SuggestInfo {
 	public void setGameCost(String gameCost) {
 		this.gameCost = gameCost;
 	}
-	public int getAffinityLevel() {
-		return affinityLevel;
-	}
-	public void setAffinityLevel(int affinityLevel) {
-		this.affinityLevel = affinityLevel;
-	}
+	
 
 }
