@@ -38,7 +38,7 @@ public class DataController {
 			System.out.println("Game exist");
 
 			List<GameInfo> game = gameDao.gameDetails(gameName);
-			ArrayList<SuggestInfo> suggestion = (ArrayList<SuggestInfo>) gameDao.gameSuggest(gameName);
+			ArrayList<SuggestInfo> suggestion = (ArrayList<SuggestInfo>) gameDao.gameSuggest();
 			model.put("game", game);
 			model.put("suggestion", suggestion);
 			return new ModelAndView("gameDetails", "model", model);
@@ -55,7 +55,7 @@ public class DataController {
 			ArrayList<SuggestInfo> suggestion1 = suggestGame.getGameSuggesstion(url);
 			for (SuggestInfo suggestInfo : suggestion1) {
 				gameDao.saveSuggestion(suggestInfo);
-				List<SuggestInfo> suggestion = gameDao.gameSuggest(gameName);
+				List<SuggestInfo> suggestion = gameDao.gameSuggest();
 				model.put("game", game);
 				model.put("suggestion", suggestion);
 

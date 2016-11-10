@@ -1,9 +1,16 @@
 package com.game.dto;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -32,8 +39,18 @@ public class SuggestInfo {
 	@Column
 	private String gameCost;
 	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn
+	private GameInfo game;
 	
 	
+	
+	public GameInfo getGame() {
+		return game;
+	}
+	public void setGame(GameInfo game) {
+		this.game = game;
+	}
 	public String getGameName() {
 		return gameName;
 	}
@@ -63,6 +80,12 @@ public class SuggestInfo {
 	}
 	public void setGameRating(String gameRating) {
 		this.gameRating = gameRating;
+	}
+	public int getSequenceId() {
+		return sequenceId;
+	}
+	public void setSequenceId(int sequenceId) {
+		this.sequenceId = sequenceId;
 	}
 	public String getGameCost() {
 		return gameCost;

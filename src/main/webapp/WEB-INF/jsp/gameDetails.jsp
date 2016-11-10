@@ -30,6 +30,7 @@
 		</c:forEach>
 	</table>
 	<br>
+	<h2>Similar Games</h2>
 	<table>
 	<tr>
 			<td>Sequence Id</td>
